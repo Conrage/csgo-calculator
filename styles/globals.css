@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-size: 97.5% !important;
+}
 html,
 body {
   padding: 0;
@@ -15,12 +21,42 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+html {
+  color-scheme: dark;
+}
+body {
+  background-color: hsl(217 33% 17%/1);
+  background-image: radial-gradient(
+    hsla(222 66% 82% / 0.2) 0.5px,
+    hsla(222 47% 10% / 1) 0.5px
+  );
+  background-size: 5px 5px;
+}
+@media (max-width: 641px) {
+  * {
+    font-size: 97% !important;
   }
-  body {
-    color: white;
-    background: black;
+  .card-body {
+    padding: 1rem;
   }
+  .score {
+    padding: 0.1rem 0.7rem 0.1rem 0.7rem;
+    gap: 0.5rem;
+  }
+}
+.weapon-mask {
+  filter: invert(48%) sepia(82%) saturate(447%) hue-rotate(198deg)
+    brightness(104%) contrast(94%);
+  opacity: 0.6;
+}
+
+.weapon-CT-mask {
+  filter: invert(60%) sepia(72%) saturate(1084%) hue-rotate(169deg)
+    brightness(102%) contrast(95%);
+  opacity: 0.6;
+}
+.weapon-TR-mask {
+  filter: invert(72%) sepia(48%) saturate(581%) hue-rotate(350deg)
+    brightness(106%) contrast(91%);
+  opacity: 0.6;
 }
